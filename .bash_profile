@@ -30,6 +30,16 @@ alias gs='git status'
 # git stash list
 alias gsl='git stash list'
 
+# git rebase against origin/master
+alias grom="git rebase origin/master"
+
+# git stash apply. must append stash@{num}
+alias gsa="git stash apply"
+
+# list all files changed in specific commit. must append specific commit.
+alias commit-files="git diff-tree --no-commit-id --namestatus -r"
+
+# unapply stash that was just applied
 alias unapply-stash='git stash show -p stash@{0} | git apply -R'
 
 # cd to path and immediately ls

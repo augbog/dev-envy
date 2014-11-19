@@ -35,3 +35,13 @@ Don't know markup? Here you go: [Markup on Github](https://help.github.com/artic
   <li><a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass">Syntax Highlighting for Sass</a></li>
 </ul>
 
+<h2>Grunt plugins</h2>
+<ul>
+  <li>grunt-spritesmith</li>
+  <li>
+    <h3><a href="https://github.com/addyosmani/grunt-uncss">grunt-uncss</a></h3>
+    <ul>
+      <li>Removes unnecessary CSS from existing CSS files.</li>
+    </ul>
+  </li>
+</ul>
