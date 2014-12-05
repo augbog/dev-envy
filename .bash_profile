@@ -5,17 +5,17 @@
 alias insecure_chrome='open -a Google\ Chrome --args --disable-web-security'
 
 # Git branch in prompt.
-
 parse_git_branch() {
-
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-
 }
 
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Pretty git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# pretty git log tree graph
+alias glola="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
 # Visualize git log full history including branch merges
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
