@@ -36,6 +36,11 @@ alias grom="git rebase origin/master"
 # git stash apply. must append stash@{num}
 alias gsa="git stash apply"
 
+# git list number of commits in order based on author
+alias git-total="git shortlog -s -n --all"
+
+alias git-fame="git shortlog -sne --all"
+
 # list all files changed in specific commit. must append specific commit.
 alias commit-files="git diff-tree --no-commit-id --namestatus -r"
 
@@ -65,7 +70,7 @@ alias bash-profile='open -a Sublime\ Text.app ~/.bash_profile'
 alias bash-reload='source ~/.bash_profile'
 
 # Open gitconfig 
-alias gitconfig='open -a Sublime\ Text.app ~/.gitconfig'
+alias git-config='open -a Sublime\ Text.app ~/.gitconfig'
 
 # Open in Sublime
 alias sublime='open -a Sublime\ Text.app'
@@ -74,7 +79,7 @@ alias sublime='open -a Sublime\ Text.app'
 alias json="python -mjson.tool"
 
 # Find a string in git history
-alias gitsearch='git rev-list --all | xargs git grep -F'
+alias git-search='git rev-list --all | xargs git grep -F'
 
 # Find a command you just did
 alias hs='history | grep --color=auto'

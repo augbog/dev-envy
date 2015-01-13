@@ -28,6 +28,12 @@ Don't know markup? Here you go: [Markup on Github](https://help.github.com/artic
       <li>Exclude .git and node_modules folder</li>
     </ul>
   </li>
+  <li>
+    <h3><a href="https://github.com/Monnoroch/ColorHighlighter">Color Highlighter</a></h3>
+    <ul>
+      <li>When highlighting HEX and RGB values, in CSS, color of highlighter will match color</li>
+    </ul>
+  </li>
 </ul>
 
 <h2>Still Exploring these Packages</h2>
