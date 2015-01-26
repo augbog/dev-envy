@@ -3,51 +3,49 @@ dev-envy
 
 The ultimate development environment? A list of things that optimize your work flow including bash scripts, Sublime plugins, etc. 
 
-Don't know markup? Here you go: [Markup on Github](https://help.github.com/articles/writing-on-github/)
+Don't know markup? Here you go: <a href="https://help.github.com/articles/writing-on-github/" target="_blank">Markup on Github</a>
 
-<h2>Sublime Text Packages</h2>
-<ul>
-  <li>
-    <h3>Emmet.io</h3>
-    <ul>
-      <li>Generate HTML markup with CSS Selector syntax</li>
-    </ul>
-  </li>
-  <li>
-    <h3>DiffChecker</h3>
-  </li>
-  <li>
-    <h3>HTML/CSS/JS Prettify</h3>
-  </li>
-  <li>
-    <h3><a href="https://sublime.wbond.net/packages/TodoReview">ToDoReview</a></h3>
-    <ul>
-      <li>Creates a list of all TODOs in certain files, folders, projects and takes you directly to them</li>
-      <li>Allows you to right-click in Project pane to only look at TODOs of specific project</li>
-      <li>Supports priorities and allows you to sort TODOs by just adding (1) or (2)</li>
-      <li>Exclude .git and node_modules folder</li>
-    </ul>
-  </li>
-  <li>
-    <h3><a href="https://github.com/Monnoroch/ColorHighlighter">Color Highlighter</a></h3>
-    <ul>
-      <li>When highlighting HEX and RGB values, in CSS, color of highlighter will match color</li>
-    </ul>
-  </li>
-</ul>
+## Sublime Text Packages
 
-<h2>Still Exploring these Packages</h2>
-<ul>
-  <li><a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass">Syntax Highlighting for Sass</a></li>
-</ul>
+### Emmet.io
+* Generate HTML markup with CSS Selector syntax
 
-<h2>Grunt plugins</h2>
-<ul>
-  <li>grunt-spritesmith</li>
-  <li>
-    <h3><a href="https://github.com/addyosmani/grunt-uncss">grunt-uncss</a></h3>
-    <ul>
-      <li>Removes unnecessary CSS from existing CSS files.</li>
-    </ul>
-  </li>
-</ul>
+### DiffChecker
+
+### HTML/CSS/JS Prettify
+
+### <a href="https://sublime.wbond.net/packages/TodoReview" target="_blank">ToDoReview</a>
+* Creates a list of all TODOs in certain files, folders, projects and takes you directly to them
+* Allows you to right-click in Project pane to only look at TODOs of specific project
+* Supports priorities and allows you to sort TODOs by just adding (1) or (2)
+* Exclude .git and node_modules folder
+
+### <a href="https://github.com/Monnoroch/ColorHighlighter" target="_blank">Color Highlighter</a>
+* When highlighting HEX and RGB values, in CSS, color of highlighter will match color
+
+
+## Grunt plugins
+
+
+## Chrome extensions
+
+### <a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/related?hl=en" target="_blank">WhatFont</a></li>
+* Clicking on text on a webpage will oepn up modal showing `font-family`, `font-size` and `line-height`.
+
+
+## Exploration
+The following things below are still being explored.
+
+### Sublime Plugins
+* <a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass" target="_blank">Syntax Highlighting for Sass</a>
+
+
+### Grunt plugins
+* <a href="https://github.com/addyosmani/grunt-uncss" target="_blank">grunt-uncss</a>
+  * Removes unnecessary CSS from existing CSS files.
+* <a href="https://github.com/drdk/grunt-dr-svg-sprites" target="_blank">grunt-dr-svg-sprites</a>
+  * Creates SVG sprites with PNG fallback
+  * Allows users to create handlebars files so it will return CSS or SCSS along with sprites
+* <a href="https://github.com/FWeinb/grunt-svgstore" target="_blank">grunt-svg-store</a>
+  * Creates an inline SVG sprite that creates an inline `<symbol>` object and has all the SVGs reference those symbols with the `<use>` tag
+  * Has watch task so that it will watch and build a folder of SVGs into a sprite
