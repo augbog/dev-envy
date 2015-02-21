@@ -82,4 +82,10 @@ alias json="python -mjson.tool"
 alias git-search='git rev-list --all | xargs git grep -F'
 
 # Find a command you just did
+# To redo a command in the past, do !123 where 123 is the number next to the command shown in history
 alias hs='history | grep --color=auto'
+
+# Show and hide hidden files
+alias show-files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hide-files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
