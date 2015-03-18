@@ -1,15 +1,38 @@
 # Augustus Yuan
 # Useful bash profile commands to optimize your workflow
 
+# Change ls colors for directory, files, etc
+export CLICOLOR=1
+export LSCOLORS=Exfxcxdxbxegedabagacad
+
+# Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto'
+
+# Color Variables
+# Usage: echo "${red}red text ${green}green text${reset}"
+#
+# setaf: foreground
+# setab: background
+
+black=`tput setaf 0`
+red=`tput setaf 1`
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+blue=`tput setaf 4`
+magenta=`tput setaf 5`
+cyan=`tput setaf 6`
+white=`tput setaf 7`
+reset=`tput sgr0`
+
 # Run Insecure Chrome
 alias insecure_chrome='open -a Google\ Chrome --args --disable-web-security'
+
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Pretty git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -36,10 +59,21 @@ alias grom="git rebase origin/master"
 # git stash apply. must append stash@{num}
 alias gsa="git stash apply"
 
-# git list number of commits in order based on author
-alias git-total="git shortlog -s -n --all"
-
+# based on .mailmap, show total commits
 alias git-fame="git shortlog -sne --all"
+
+# Git branch diff
+# git show diff in commits between specific branch and master
+# if no parameter specified, uses current branch
+gbd() {
+  if [ -z "$1" ]
+  then
+    branch_name="$(git symbolic-ref --short -q HEAD)"
+    git log --oneline master..$branch_name
+  else
+    git log --oneline master..$1
+  fi
+}
 
 # list all files changed in specific commit. must append specific commit.
 alias commit-files="git diff-tree --no-commit-id --namestatus -r"
@@ -52,7 +86,7 @@ cdls() { cd "$@" && ls; }
 
 # get rid of command not found
 alias cd..='cd ..'
- 
+
 # a quick way to get out of current directory
 alias ..='cd ..'
 alias .2='cd ../../'
@@ -69,17 +103,17 @@ alias bash-profile='open -a Sublime\ Text.app ~/.bash_profile'
 # Reload Profile
 alias bash-reload='source ~/.bash_profile'
 
-# Open gitconfig 
+# Open gitconfig
 alias git-config='open -a Sublime\ Text.app ~/.gitconfig'
 
 # Open in Sublime
-alias sublime='open -a Sublime\ Text.app'
+alias st='open -a Sublime\ Text.app'
 
 # JSON pretty print
 alias json="python -mjson.tool"
 
 # Find a string in git history
-alias git-search='git rev-list --all | xargs git grep -F'
+alias ghs='git rev-list --all | xargs git grep -F'
 
 # Find a command you just did
 # To redo a command in the past, do !123 where 123 is the number next to the command shown in history
