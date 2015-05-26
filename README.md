@@ -5,6 +5,13 @@ The ultimate development environment? A list of things that optimize your work f
 
 Don't know markup? Here you go: <a href="https://help.github.com/articles/writing-on-github/" target="_blank">Markup on Github</a>
 
+## Files
+`.editorconfig` Put at the root of project folder and use in conjunction with Sublime EditorConfig
+
+`.csscomb.json` Put at the root of project folder and use in conjunction with grunt-csscomb
+
+`Package Control.sublime-settings` Place in Library/Application Support/Sublime Text 3/Packages/User/
+
 ## Sublime Text Packages
 
 * ### Emmet.io
@@ -40,6 +47,7 @@ The following things below are still being explored.
 
 * ### Sublime Plugins
   * <a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass" target="_blank">Syntax Highlighting for Sass</a>
+  * <a href="https://github.com/spadgos/sublime-jsdocs" target="_blank">DocBlockr</a>
 
 
 * ### Grunt plugins
@@ -51,3 +59,10 @@ The following things below are still being explored.
   * <a href="https://github.com/FWeinb/grunt-svgstore" target="_blank">grunt-svg-store</a>
     * Creates an inline SVG sprite that creates an inline `<symbol>` object and has all the SVGs reference those symbols with the `<use>` tag
     * Has watch task so that it will watch and build a folder of SVGs into a sprite
+
+
+## Debugging and Testing Resources
+
+* ### Devices
+  * <a href="https://developer.chrome.com/devtools/docs/remote-debugging" target="_blank">Mobile Chrome: How to show Console with Remote Debugging</a>
+  * <a href="http://webdesign.tutsplus.com/articles/quick-tip-using-web-inspector-to-debug-mobile-safari--webdesign-8787" target="_blank">Mobile Safari: Using Web Inspector to Debug</a>

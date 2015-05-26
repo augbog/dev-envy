@@ -47,14 +47,24 @@ alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 # Warning this takes a while depending on your history
 alias extreme-gl='git log --graph --oneline --decorate --all $( git fsck --no-reflog | awk "/dangling commit/ {print $3}" )'
 
+# update master
+upm() {
+  branch_name="$(git symbolic-ref --short -q HEAD)"
+  if [ $branch_name != "master" ]
+  then
+    git stash && git checkout master && git fetch && git rebase origin/master && git checkout $branch_name && git stash apply
+  else
+    git fetch && git rebase origin/master
+  fi
+}
+
 # git status
 alias gs='git status'
 
 # git stash list
 alias gsl='git stash list'
 
-# git rebase against origin/master
-alias grom="git rebase origin/master"
+alias grom="git fetch && git rebase origin/master"
 
 # git stash apply. must append stash@{num}
 alias gsa="git stash apply"
