@@ -1,7 +1,7 @@
 dev-envy
 ========
 
-The ultimate development environment? A list of things that optimize your work flow including bash scripts, Sublime plugins, etc. 
+The ultimate development environment? A list of things that optimize your work flow including bash scripts, Sublime plugins, etc.
 
 Don't know markup? Here you go: <a href="https://help.github.com/articles/writing-on-github/" target="_blank">Markup on Github</a>
 
@@ -31,6 +31,12 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
   * Material Design theme for Sublime
 
 ## Atom
+
+One line install
+
+```
+apm install seti-ui monokai-seti open-recent project-manager todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify emmet
+```
 
 ## Grunt
 
