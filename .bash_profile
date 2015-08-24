@@ -1,12 +1,18 @@
 # Augustus Yuan
 # Useful bash profile commands to optimize your workflow
 
+export PATH=/bin:/usr/bin:/usr/local/bin
+
 # Change ls colors for directory, files, etc
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
+# default grep to ggrep
+alias grep="ggrep $GREP_OPTIONS"
+# unset GREP_OPTIONS because deprecated to ggrep
+unset GREP_OPTIONS
 
 # Color Variables
 # Usage: echo "${red}red text ${green}green text${reset}"
@@ -107,9 +113,6 @@ alias .6='cd ../../../../../../'
 alias .7='cd ../../../../../../../'
 alias .8='cd ../../../../../../../../'
 
-# Open Profile in Sublime Text
-alias bash-profile='open -a Sublime\ Text.app ~/.bash_profile'
-
 # Reload Profile
 alias bash-reload='source ~/.bash_profile'
 
@@ -129,7 +132,9 @@ alias ghs='git rev-list --all | xargs git grep -F'
 # To redo a command in the past, do !123 where 123 is the number next to the command shown in history
 alias hs='history | grep --color=auto'
 
+# ls hidden dot files only
+alias ls.="ls -A | egrep '^\.'"
+
 # Show and hide hidden files
 alias show-files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide-files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
