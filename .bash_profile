@@ -30,12 +30,12 @@ cyan=`tput setaf 6`
 white=`tput setaf 7`
 reset=`tput sgr0`
 
-# Run Insecure Chrome
-alias insecure_chrome='open -a Google\ Chrome --args --disable-web-security'
+# if git autocompletion script exists then run
+# See: https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
+test -f ~/.git-completion.bash && . $_
 
+# git branch in prompt
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-# Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -74,6 +74,9 @@ alias grom="git fetch && git rebase origin/master"
 
 # git stash apply. must append stash@{num}
 alias gsa="git stash apply"
+
+# Find a string in git history
+alias ghs='git rev-list --all | xargs git grep -F'
 
 # based on .mailmap, show total commits
 alias git-fame="git shortlog -sne --all"
@@ -116,17 +119,11 @@ alias .8='cd ../../../../../../../../'
 # Reload Profile
 alias bash-reload='source ~/.bash_profile'
 
-# Open gitconfig
-alias git-config='open -a Sublime\ Text.app ~/.gitconfig'
-
 # Open in Sublime
 alias st='open -a Sublime\ Text.app'
 
 # JSON pretty print
 alias json="python -mjson.tool"
-
-# Find a string in git history
-alias ghs='git rev-list --all | xargs git grep -F'
 
 # Find a command you just did
 # To redo a command in the past, do !123 where 123 is the number next to the command shown in history
@@ -134,6 +131,9 @@ alias hs='history | grep --color=auto'
 
 # ls hidden dot files only
 alias ls.="ls -A | egrep '^\.'"
+
+# Run Insecure Chrome
+alias insecure_chrome='open -a Google\ Chrome --args --disable-web-security'
 
 # Show and hide hidden files
 alias show-files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
