@@ -35,21 +35,33 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
 One line install
 
 ```
-apm install seti-ui monokai-seti open-recent project-manager todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify emmet
+apm install seti-ui monokai-seti open-recent project-manager todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments minimap-pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify php-cs-fixer emmet trailing-spaces
 ```
 
-## Grunt
+Note: [`php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) requires install for `atom-beautify` for PHP
 
-* <a href="https://github.com/FWeinb/grunt-svgstore" target="_blank">grunt-svg-store</a>
-  * Creates an inline SVG sprite that creates an inline `<symbol>` object and has all the SVGs reference those symbols with the `<use>` tag
-  * Has watch task so that it will watch and build a folder of SVGs into a sprite
+## Vim
 
-## Gulp
+```
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'moll/vim-node'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'wincent/command-t'
+Plugin 'mkitt/tabline.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'scrooloose/syntastic'
+```
 
 ## Chrome extensions
 
-* ### <a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/related?hl=en" target="_blank">WhatFont</a>
-  * Clicking on text on a webpage will oepn up modal showing `font-family`, `font-size` and `line-height`.
-
-* ### <a href="https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj?hl=en" target="_blank">Dimensions</a>
-  * Hovering over certain places will show the dimensions of an element or spacing between elements.
+Development
+* <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank">React Developer Tools</a>
+Design
+* <a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/related?hl=en" target="_blank">WhatFont</a>
+* <a href="https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj?hl=en" target="_blank">Dimensions</a>
