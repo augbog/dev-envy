@@ -13,6 +13,9 @@ set showcmd
 " set syntax highlighting
 syntax on
 
+" set line numbers
+set nu
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -36,8 +39,21 @@ Bundle 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" turn off style checks from syntastic
+let g:syntastic_quiet_messages = { "type": "style" }
+
+" set vim autocompletion to check longest and list other options
+set wildmenu
+set wildmode=longest:list,full
+
 " Map esc to jk to exit out of modes fast
 inoremap jk <esc>
+
+" php lint syntax to Ctrl+B
+map <C-B> :!php -l %<CR>
+
+" toggled line numbers
+nmap <C-N><C-N> :set invnumber<CR>
 
 " for Command T
 let g:CommandTMaxFiles=1000000
@@ -49,7 +65,6 @@ set splitbelow
 set splitright
 
 " set swp and backup directories into vim folder
-" make sure to mkdir them in your .vim folder
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//

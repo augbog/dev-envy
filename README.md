@@ -58,6 +58,16 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 ```
 
+## CLI tools
+
+Miscellaneous tools that are useful to have in the command line
+
+One line install
+
+```
+brew install trash jq
+```
+
 ## Chrome extensions
 
 Development

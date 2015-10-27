@@ -67,6 +67,12 @@ upm() {
 # git status
 alias gs='git status'
 
+# git branch
+alias gb='git branch'
+
+# create branch
+alias gcb='git checkout -b'
+
 # git stash list
 alias gsl='git stash list'
 
