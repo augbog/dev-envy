@@ -7,6 +7,10 @@ export PATH=/bin:/usr/bin:/usr/local/bin
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+# Set GIT_EDITOR to be vim (this has been aliased to be MacVim below)
+export GIT_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -f"
+export CODE_EDITOR="subl"
+
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
 # default grep to ggrep
@@ -100,6 +104,25 @@ gbd() {
   fi
 }
 
+# git reset soft/hard
+grh() {
+  if [ -z "$1" ]
+  then
+    git reset --hard HEAD~"$1"
+  else
+    git reset --hard HEAD~1
+  fi
+}
+
+grs() {
+  if [ -z "$1" ]
+  then
+    git reset --soft HEAD~"$1"
+  else
+    git reset --soft HEAD~1
+  fi
+}
+
 # list all files changed in specific commit. must append specific commit.
 alias commit-files="git diff-tree --no-commit-id --namestatus -r"
 
@@ -121,6 +144,9 @@ alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
 alias .7='cd ../../../../../../../'
 alias .8='cd ../../../../../../../../'
+
+# open bash profile
+alias bash-profile="$CODE_EDITOR ~/.bash_profile"
 
 # Reload Profile
 alias bash-reload='source ~/.bash_profile'
