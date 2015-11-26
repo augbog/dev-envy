@@ -3,6 +3,9 @@
 
 export PATH=/bin:/usr/bin:/usr/local/bin
 
+# make vim the default editor not vi
+export EDITOR=vim
+
 # Change ls colors for directory, files, etc
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
@@ -76,6 +79,8 @@ alias gb='git branch'
 
 # create branch
 alias gcb='git checkout -b'
+
+alias gcp='git cherry-pick'
 
 # git stash list
 alias gsl='git stash list'
@@ -151,9 +156,6 @@ alias bash-profile="$CODE_EDITOR ~/.bash_profile"
 # Reload Profile
 alias bash-reload='source ~/.bash_profile'
 
-# Open in Sublime
-alias st='open -a Sublime\ Text.app'
-
 # JSON pretty print
 alias json="python -mjson.tool"
 
@@ -170,3 +172,8 @@ alias insecure_chrome='open -a Google\ Chrome --args --disable-web-security'
 # Show and hide hidden files
 alias show-files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide-files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# restart wifi
+# Please note this may depend on your Mac device see more about ifconfig
+# http://superuser.com/questions/267660/can-someone-please-explain-ifconfig-output-in-mac-os-x
+alias restart-wifi='sudo ifconfig en0 down && sudo ifconfig en0 up'

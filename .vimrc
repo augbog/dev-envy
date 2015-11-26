@@ -46,6 +46,10 @@ let g:syntastic_quiet_messages = { "type": "style" }
 set wildmenu
 set wildmode=longest:list,full
 
+" make it so NERDTree will show hidden dot files
+" toggle with Shift + i
+let NERDTreeShowHidden=1
+
 " Map esc to jk to exit out of modes fast
 inoremap jk <esc>
 
