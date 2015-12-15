@@ -5,13 +5,12 @@ var gulp        = require('gulp'),
   browserSync   = require('browser-sync'),
   uglify        = require('gulp-uglify'),
   rename        = require('gulp-rename'),
-  jshint        = require('gulp-jshint'),
-  jshintStyle   = require('jshint-stylish'),
   notify        = require('gulp-notify'),
   beep          = require('beepbeep'),
   colors        = require('colors'),
   plumber       = require('gulp-plumber'),
   path          = require('path');
+  eslint        = require('gulp-eslint');
 
 // error handling convenience wrapper
 gulp.plumbedSrc = function(){
@@ -45,17 +44,17 @@ gulp.task('sass', function () {
     .pipe(notify({ message: 'CSS complete' }));
 });
 
-gulp.task('jshint', function() {
+gulp.task('eslint', function() {
   return gulp.plumbedSrc('./js/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter(jshintStyle))
-    .pipe(jshint.reporter('fail'))
-    .pipe(notify({ message: 'JSHint complete' }));
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    .pipe(notify({ message: 'ESLint complete' }));
 });
 
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch('js/**/*.js', ['jshint', 'scripts']);
+  gulp.watch('js/**/*.js', ['eslint', 'scripts']);
 });
 
 gulp.task('default', ['watch']);

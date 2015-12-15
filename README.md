@@ -12,6 +12,8 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
 
 `.csscomb.json` Put at the root of project folder and use in conjunction with grunt-csscomb
 
+`.eslintrc` I opt for [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript)
+
 ## Sublime Text
 
 * <a href="https://github.com/sergeche/emmet-sublime" target="_blank">Emmet.io</a>
@@ -66,6 +68,16 @@ One line install
 
 ```
 brew install trash jq
+```
+
+## NPM tools
+
+Miscellaneous npm packages that are useful to have
+
+One line install
+
+```
+npm install -g node-inspector eslint
 ```
 
 ## Chrome extensions
