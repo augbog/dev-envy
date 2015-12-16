@@ -74,6 +74,14 @@ upm() {
 # git status
 alias gs='git status'
 
+# git diff based on characters
+# http://stackoverflow.com/questions/3231759/how-can-i-visualize-per-character-differences-in-a-unified-diff-file/25634420#25634420
+alias gd="git diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'"
+
+# git diff highlight
+# Note: requires cloning git repo under ~/git
+alias gdh="git diff --color=always | ~/git/contrib/diff-highlight/diff-highlight"
+
 # git branch
 alias gb='git branch'
 
