@@ -10,6 +10,9 @@ export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+# path where all your repos live
+export REPO="$HOME/repos/"
+
 # Set GIT_EDITOR to be vim (this has been aliased to be MacVim below)
 export GIT_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -f"
 export CODE_EDITOR="subl"
@@ -80,7 +83,14 @@ alias gd="git diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'"
 
 # git diff highlight
 # Note: requires cloning git repo under ~/git
-alias gdh="git diff --color=always | ~/git/contrib/diff-highlight/diff-highlight"
+gdh() {
+  if [ -z "$1" ]
+  then
+    git diff --color=always | ~/git/contrib/diff-highlight/diff-highlight
+  else
+    git diff --color=always "$1" | ~/git/contrib/diff-highlight/diff-highlight
+  fi
+}
 
 # git branch
 alias gb='git branch'
@@ -118,23 +128,8 @@ gbd() {
 }
 
 # git reset soft/hard
-grh() {
-  if [ -z "$1" ]
-  then
-    git reset --hard HEAD~"$1"
-  else
-    git reset --hard HEAD~1
-  fi
-}
-
-grs() {
-  if [ -z "$1" ]
-  then
-    git reset --soft HEAD~"$1"
-  else
-    git reset --soft HEAD~1
-  fi
-}
+alias grh="git reset --hard"
+alias grs="git reset --soft"
 
 # list all files changed in specific commit. must append specific commit.
 alias commit-files="git diff-tree --no-commit-id --namestatus -r"
@@ -157,6 +152,8 @@ alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
 alias .7='cd ../../../../../../../'
 alias .8='cd ../../../../../../../../'
+
+alias repo="cd $REPO"
 
 # open bash profile
 alias bash-profile="$CODE_EDITOR ~/.bash_profile"
