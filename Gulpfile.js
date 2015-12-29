@@ -5,6 +5,7 @@ var gulp        = require('gulp'),
   browserSync   = require('browser-sync'),
   uglify        = require('gulp-uglify'),
   rename        = require('gulp-rename'),
+  replace       = require('gulp-replace'),
   notify        = require('gulp-notify'),
   beep          = require('beepbeep'),
   colors        = require('colors'),
@@ -42,6 +43,19 @@ gulp.task('sass', function () {
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/css/'))
     .pipe(notify({ message: 'CSS complete' }));
+});
+
+gulp.task('scripts', function () {
+  gulp.plumbedSrc('./js/main.js')
+    .pipe(browserify())
+    .pipe(gulp.dest('./build/js/'))
+    .pipe(uglify())
+    .pipe(rename({
+       extname: '.min.js'
+     }))
+    .pipe(replace('./build/js/*.min.js'))
+    .pipe(gulp.dest('./build/js'))
+    .pipe(notify({ message: 'JS files complete' }));
 });
 
 gulp.task('eslint', function() {
