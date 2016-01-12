@@ -1,0 +1,11 @@
+// Sample SASS code
+// This file will get built out into build/css
+
+$variable: 12px;
+
+body {
+  font-size: $variable;
+  h1 {
+    margin: 0px;
+  }
+}
