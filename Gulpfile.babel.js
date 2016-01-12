@@ -17,46 +17,7 @@ import sourcemaps    from 'gulp-sourcemaps';
 import source        from 'vinyl-source-stream';
 import buffer        from 'vinyl-buffer';
 import browserify    from 'browserify';
-import watchify      from 'watchify';
 import babel         from 'babelify';
-
-function compile(watch) {
-  let bundler = browserify({
-    // Define the entry point for our application
-    entries: ['./js/main.es6.js'],
-    // Debugging is nice
-    debug: true,
-    // Allow importing from the following extensions
-    extensions: [' ', 'js', 'jsx']
-  }).transform(babel.configure({
-    presets: ["es2015"]
-  }));
-
-  if (watch) {
-    bundler = watchify(bundler);
-    bundler.on('update', function() {
-      console.log('-> bundling...');
-      rebundle();
-    });
-  }
-
-  function rebundle() {
-    bundler.bundle()
-      .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('main.js'))
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./build/js'));
-  }
-
-  rebundle();
-}
-
-function watch() {
-  return compile(true);
-};
 
 // error handling convenience wrapper
 gulp.plumbedSrc = function(){
@@ -91,7 +52,22 @@ gulp.task('browser-sync', () => {
 });
 
 gulp.task('scripts', () => {
-  return compile();
+  let bundler = browserify({
+    entries: ['./js/main.es6.js'],
+    debug: true,
+    extensions: [' ', 'js', 'jsx']
+  }).transform(babel.configure({
+    presets: ["es2015"]
+  }));
+
+  bundler.bundle()
+    .on('error', function(err) { console.error(err); this.emit('end'); })
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('eslint', () => {
