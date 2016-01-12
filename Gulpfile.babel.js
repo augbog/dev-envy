@@ -62,11 +62,12 @@ gulp.task('scripts', () => {
 
   bundler.bundle()
     .on('error', function(err) { console.error(err); this.emit('end'); })
-    .pipe(source('main.js'))
+    .pipe(source('main.es6.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(sourcemaps.write('./'))
+      .pipe(uglify())
+      .pipe(rename("main-min.js"))
+    .pipe(sourcemaps.write('./', {sourceRoot: './js'}))
     .pipe(gulp.dest('./build/js'));
 });
 
