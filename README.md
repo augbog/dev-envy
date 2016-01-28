@@ -10,7 +10,7 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
 
 `.editorconfig` Put at the root of project folder and use in conjunction with Sublime EditorConfig
 
-`.csscomb.json` Put at the root of project folder and use in conjunction with grunt-csscomb
+`.csscomb.json` Put at the root of project folder and use in conjunction with [csscomb](http://csscomb.com/)
 
 `.eslintrc` I opt for [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript)
 
