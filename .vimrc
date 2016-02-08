@@ -31,6 +31,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'wincent/command-t'
 Plugin 'mkitt/tabline.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 Bundle 'majutsushi/tagbar'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jelera/vim-javascript-syntax'
@@ -47,7 +52,7 @@ set wildmenu
 set wildmode=longest:list,full
 
 " make it so NERDTree will show hidden dot files
-" toggle with Shift + i
+" Toggle with Shift + i
 let NERDTreeShowHidden=1
 
 " Map esc to jk to exit out of modes fast
@@ -55,6 +60,11 @@ inoremap jk <esc>
 
 " php lint syntax to Ctrl+B
 map <C-B> :!php -l %<CR>
+
+" Because YouCompleteMe uses tab, use Ctrl+J for vim-snippets
+" https://github.com/Valloric/YouCompleteMe/issues/47
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 
 " toggled line numbers
 nmap <C-N><C-N> :set invnumber<CR>
