@@ -1,0 +1,22 @@
+[user]
+	name = Augustus Yuan
+	email = ayuan@evernote.com
+[push]
+	default = simple
+[color]
+	diff = auto
+	ui = auto
+[color "diff"]
+	whitespace = red reverse
+[alias]
+  # assumes git.git clone at ~/git
+  diff-highlight = "!f() { git diff \"$@\" | ~/git/contrib/diff-highlight/diff-highlight; }; f"
+[pager]
+  # https://github.com/so-fancy/diff-so-fancy
+	diff = diff-so-fancy | less --tabs=1,5 -R
+	show = diff-so-fancy | less --tabs=1,5 -R
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

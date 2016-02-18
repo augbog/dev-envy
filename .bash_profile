@@ -44,6 +44,9 @@ reset=`tput sgr0`
 # See: https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
 test -f ~/.git-completion.bash && . $_
 
+# if nvm exists, run nvm
+test -f ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
+
 # git branch in prompt
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 parse_git_branch() {
