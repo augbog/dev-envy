@@ -24,6 +24,10 @@ alias grep="ggrep $GREP_OPTIONS"
 # unset GREP_OPTIONS because deprecated to ggrep
 unset GREP_OPTIONS
 
+# requires installing MacVim
+# brew install macvim && brew linkapps macvim
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim -f"
+
 # Color Variables
 # Usage: echo "${red}red text ${green}green text${reset}"
 #

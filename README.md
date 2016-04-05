@@ -60,6 +60,10 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 ```
 
+Note: You should alias your `vim` to [MacVim](https://github.com/macvim-dev/macvim) because YouCompleteMe only works for higher versions. You will also need to recompile the [YCM plugin which they mention in their README](https://github.com/Valloric/YouCompleteMe).
+
+`command-t` also requires you to compile the plugin before you can actually use it. You can find how to under [Compiling Command-T in the help](https://github.com/wincent/command-t/blob/master/doc/command-t.txt) information.
+
 ## CLI tools
 
 Miscellaneous tools that are useful to have in the command line
@@ -77,7 +81,7 @@ Miscellaneous npm packages that are useful to have
 One line install
 
 ```
-npm install -g node-inspector eslint
+npm install -g node-inspector eslint nvm grunt-cli
 ```
 
 ## Chrome extensions
