@@ -51,6 +51,19 @@ test -f ~/.git-completion.bash && . $_
 # if nvm exists, run nvm
 test -f ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
 
+# If a directory has a .nvmrc then use the node version specified
+# https://github.com/creationix/nvm/issues/110#issuecomment-180570373
+enter_directory(){
+  if [ "$PWD" != "$PREV_PWD" ]; then
+    PREV_PWD="$PWD";
+    if [ -e ".nvmrc" ]; then
+      nvm use;
+    fi
+  fi
+}
+
+export PROMPT_COMMAND="$PROMPT_COMMAND enter_directory ;"
+
 # git branch in prompt
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 parse_git_branch() {
