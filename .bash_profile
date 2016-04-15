@@ -51,13 +51,22 @@ test -f ~/.git-completion.bash && . $_
 # if nvm exists, run nvm
 test -f ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
 
+# change title name of tab in terminal
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
 # If a directory has a .nvmrc then use the node version specified
+# Also made it so it will change tab terminal name
 # https://github.com/creationix/nvm/issues/110#issuecomment-180570373
 enter_directory(){
   if [ "$PWD" != "$PREV_PWD" ]; then
     PREV_PWD="$PWD";
+    title $(echo ${PWD##*/}) $(node -v);
     if [ -e ".nvmrc" ]; then
-      nvm use;
+      nvm install;
+      # set tab terminal name to be cwd and node version
+      title $(echo ${PWD##*/}) $(node -v);
     fi
   fi
 }
