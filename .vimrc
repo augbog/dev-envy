@@ -16,6 +16,9 @@ syntax on
 " set line numbers
 set nu
 
+" set colorcolumn limit
+set cc=90
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -35,6 +38,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 
 Bundle 'majutsushi/tagbar'
 Bundle 'Valloric/YouCompleteMe'
