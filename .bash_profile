@@ -1,7 +1,11 @@
 # Augustus Yuan
 # Useful bash profile commands to optimize your workflow
 
-export PATH=/bin:/usr/bin:/usr/local/bin
+# load nvm if exists
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PATH=/usr/local/bin:/bin:/usr/bin
 
 # make vim the default editor not vi
 export EDITOR=vim
@@ -47,9 +51,6 @@ reset=`tput sgr0`
 # if git autocompletion script exists then run
 # See: https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
 test -f ~/.git-completion.bash && . $_
-
-# if nvm exists, run nvm
-test -f ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
 
 # change title name of tab in terminal
 function title {
@@ -200,3 +201,14 @@ alias hide-files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 # Please note this may depend on your Mac device see more about ifconfig
 # http://superuser.com/questions/267660/can-someone-please-explain-ifconfig-output-in-mac-os-x
 alias restart-wifi='sudo ifconfig en0 down && sudo ifconfig en0 up'
+
+# alias unzip to v6 so we can have v64 support for zip files
+# http://apple.stackexchange.com/questions/149080/how-can-i-update-my-version-of-unzip-to-version-6-00-or-higher
+alias unzip="/usr/local/Cellar/unzip/6.0/bin/unzip"
+
+# smart resizing for images
+# https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/
+# Syntax: smartresize inputfile.png 300 outputdir/
+smartresize() {
+  mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}

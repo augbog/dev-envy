@@ -37,7 +37,7 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
 One line install
 
 ```
-apm install seti-ui monokai-seti open-recent project-manager todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments minimap-pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify php-cs-fixer emmet trailing-spaces
+apm install seti-ui monokai-seti open-recent todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments minimap-pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify php-cs-fixer emmet trailing-spaces
 ```
 
 Note: [`php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) requires install for `atom-beautify` for PHP
