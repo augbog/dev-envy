@@ -34,13 +34,9 @@ Don't know markup? Here you go: <a href="https://help.github.com/articles/writin
 
 ## Atom
 
-One line install
-
-```
-apm install seti-ui monokai-seti open-recent todo-show minimap highlight-selected minimap-highlight-selected autoclose-html pigments minimap-pigments linter linter-htmllint linter-csslint linter-jshint linter-scss-lint linter-eslint linter-jsonlint auto-detect-indentation atom-beautify php-cs-fixer emmet trailing-spaces
-```
-
-Note: [`php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) requires install for `atom-beautify` for PHP
+Please see `atom-packages.txt` for packages. If you have installed CLI commands for Atom
+and are able to use `apm`, you can do `apm install --packages-file atom-packages.txt` to
+install them.
 
 ## Vim
 
