@@ -7,17 +7,21 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" show character count in visual mode
-set showcmd
+syntax on " set syntax highlighting
 
-" set syntax highlighting
-syntax on
+set number                        " show line numbers
+set wildignore+=*/node_modules/*   " ignores node_modules
+set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
+set ruler                         " show current position
+set showmode                      " show what mode we're currently editing in
+set showmatch                     " show matching brackets
+set list                          " show hidden chars
+set listchars=tab:▸\ ,eol:¬       " chars to be shown
+set clipboard+=unnamed            " yanks to clipboard
+set showcmd                       " show character count in visual mode
 
-" set line numbers
-set nu
+set cc=90                         " set colorcolumn limit
 
-" set colorcolumn limit
-set cc=90
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
