@@ -1,19 +1,11 @@
 {
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile",
+    "files.defaultLanguage": "markdown",
+    "window.zoomLevel": 0,
+    "flow.useNPMPackagedFlow": true,
+    "flow.runOnEdit": false,
+    "javascript.validate.enable": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/dist": true,
-        "dist": true
-    },
-    "sublimeTextKeymap.promptV3Features": true,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.snippetSuggestions": "top",
-    "editor.formatOnPaste": true,
-    // Controls if opened editors show as preview. Preview editors are reused until they are kept (e.g. via double click or editing) and show up with an italic font style.
-    "workbench.editor.enablePreview": false,
-    // Controls if opened editors from Quick Open show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
-    "workbench.editor.enablePreviewFromQuickOpen": false
-}
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.title": "${activeEditorLong}${separator}${rootName}",
+    "breadcrumbs.enabled": true
+  }

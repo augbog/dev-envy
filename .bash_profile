@@ -4,6 +4,7 @@
 # load nvm if exists
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/usr/local/bin:/bin:/usr/bin
 
@@ -216,3 +217,6 @@ smartresize() {
 # activate tensorflow in virtualenv
 # https://www.tensorflow.org/versions/r1.7/install/install_mac#installing_with_virtualenv
 alias tf-mode="cd ~/tensorflow && source ./bin/activate"
+
+# get todays downloads
+alias downloads='currentDate=$(date +%m/%d/%Y) find ~/Downloads -newermt "$currentDate"'
