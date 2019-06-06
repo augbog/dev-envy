@@ -1,12 +1,12 @@
 # Augustus Yuan
 # Useful bash profile commands to optimize your workflow
 
+export PATH=/usr/local/bin:/bin:/usr/bin
+
 # load nvm if exists
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=/usr/local/bin:/bin:/usr/bin
 
 # make vim the default editor not vi
 export EDITOR=vim
